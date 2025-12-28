@@ -1,5 +1,5 @@
 ## Interface: 11200
-## Title: Fisk
+## Title: fisk
 ## Author: FeLsop
 ## Version: 1.0.0
 ## Description: A helpful addon for Turtle WoW
