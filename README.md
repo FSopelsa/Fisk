@@ -4,9 +4,10 @@ A template addon framework for Turtle WoW.
 
 ## Installation
 
-1. Copy the `fisk` folder to your Turtle WoW Addons directory
-2. Restart the game or reload the UI (`/console reloadui`)
-3. The addon will load automatically
+1) Download the latest release ZIP (Fisk-*.zip) or clone the repo
+2) Ensure the folder name is `Fisk` and contains `Fisk.toc` inside it
+3) Place the `Fisk` folder into your Turtle WoW AddOns directory
+4) Reload the UI (`/console reloadui`)
 
 ## Usage
 
@@ -18,36 +19,43 @@ Basic slash commands:
 ## Project Structure
 
 ```
-fisk/
-├── fisk.toc          - Addon manifest file
+repo root
 ├── README.md         - This file
 ├── .gitignore        - Git ignore rules
-├── src/
-│   ├── Core.lua      - Core addon functionality
-│   ├── Config.lua    - Configuration management
-│   ├── Utilities.lua - Helper functions
-│   └── Main.lua      - Main logic and events
-└── locale/
-    └── enUS.lua      - English localization
+└── Fisk/             - Addon folder (name must match Fisk.toc)
+    ├── Fisk.toc      - Addon manifest file
+    ├── src/
+    │   ├── Core.lua      - Core addon functionality
+    │   ├── Config.lua    - Configuration management
+    │   ├── Utilities.lua - Helper functions
+    │   └── Main.lua      - Main logic and events
+    └── locale/
+        └── enUS.lua      - English localization
 ```
 
 ## Development
 
 ### Adding Features
 
-1. Create new files in the `src/` directory
-2. Add them to the load order in `fisk.toc`
-3. Use the `Fisk` namespace for all code
+1. Create new files in `Fisk/src/`
+2. Add them to the load order in `Fisk/Fisk.toc`
+3. Use the global `Fisk` namespace for all code
 
 ### Example Feature
 
 ```lua
-local ADDON_NAME, Fisk = ...
+local Fisk = _G.Fisk
 
 function Fisk:MyFeature()
     Fisk:Print("Feature loaded!")
 end
 ```
+
+## Packaging for launchers
+
+- Keep the addon inside a single folder named `Fisk`
+- The manifest must be `Fisk/Fisk.toc`
+- Release ZIPs should contain the `Fisk/` folder as the top-level entry
 
 ## API Reference
 
