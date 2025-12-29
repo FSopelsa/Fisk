@@ -6,9 +6,4 @@
 ## SavedVariables: TurtleDataDB
 ## SavedVariablesPerCharacter: TurtleDataCharDB
 
-# Localization
-locale/enUS.lua
-
-# Core
-src/Core.lua
-src/Main.lua
+TurtleData.lua
